@@ -3,6 +3,8 @@
 import { useState, type ReactNode, type InputHTMLAttributes } from "react";
 import { DashedFrame, FlowMeta, Icon } from "@/components/sketchbot/primitives";
 import type { DeviceAdaptation } from "@/lib/routes";
+import logo from "@/app/img/logo_black.png";
+import Image from "next/image";
 
 /** Full-screen gradient + dotted grid backdrop shared by login / sign-up. */
 export function AuthShell({
@@ -36,16 +38,7 @@ export function AuthCard({ title, subtitle, children }: { title: string; subtitl
     <div className="relative w-full max-w-[352px] bg-white border-2 border-black p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all flex flex-col gap-6">
       <div className="flex flex-col items-center text-center">
         <div className="w-12 h-12 bg-black flex items-center justify-center mb-4 text-white border-2 border-black">
-          <svg
-            className="w-6 h-6 stroke-current fill-transparent"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2l7.5 4.33v8.66L12 22l-7.5-4.33V6.33L12 2z" />
-            <path d="M12 7v10" strokeDasharray="2 2" strokeWidth="1.5" />
-          </svg>
+         <Image src={logo} alt="ChatBox" width={32} height={32} className="rounded-full p-[2px]" />
         </div>
         <h1 className="font-sans text-[24px] text-black font-bold uppercase tracking-tight leading-tight">{title}</h1>
         <p className="font-sans text-[13px] text-gray-600 mt-2 font-bold uppercase">{subtitle}</p>
